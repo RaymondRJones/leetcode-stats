@@ -39,8 +39,8 @@ const DonateButton = () => {
   };
 
   return (
-    <Button variant="contained" color="primary" onClick={handleClick}>
-      Donate
+    <Button variant="contained" color="secondary" onClick={handleClick}>
+      Buy Premium Access
     </Button>
   );
 };
