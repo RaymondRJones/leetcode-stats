@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Typography, Container, TextField, Button, Box, Card, CardContent, InputAdornment, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import DonateButton from './components/DonateButton';
+import Leaderboard from './components/Leaderboard';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
   const [inputTerm, setInputTerm] = useState('');
@@ -12,9 +14,8 @@ function App() {
   const [maxElo, setMaxElo] = useState(0);
   const [randomProblem, setRandomProblem] = useState(null);
 
-
   useEffect(() => {
-
+    document.title = "Twitch Leetcode";
     const fetchProblems = async () => {
       const response = await fetch('/ratings.json');
       const data = await response.json();
@@ -70,14 +71,20 @@ function App() {
   };
 
   return (
+    <Router>
+    <AppBar position="static" color="primary">
+      <Toolbar>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          Leetcode Problems by Elo (Data from Zerotrac)
+        </Typography>
+        {/* Add navigation links */}
+        <Link to="/zerotrac" style={{ color: 'white', textDecoration: 'none', margin: '0 10px' }}>Zerotrac</Link>
+        <Link to="/" style={{ color: 'white', textDecoration: 'none', margin: '0 10px' }}>Twitch Leaderboard</Link>
+      </Toolbar>
+    </AppBar>
+    <Routes>
+      <Route path="/zerotrac" element={
     <div>
-      <AppBar position="static" color="primary">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            LeetCode Elo
-          </Typography>
-        </Toolbar>
-      </AppBar>
       <Container maxWidth="md" sx={{ mt: 4, mb: 4 }}>
         <Box my={4}>
           <Typography variant="h4" component="h1" gutterBottom>
@@ -196,10 +203,16 @@ function App() {
         </Box>
 
       </Container>
+      { /* 
       <Box mt={5} display="flex" justifyContent="center">
         <DonateButton></DonateButton>
       </Box>
+          */}
     </div>
+      }/>
+    <Route path="/" element={<Leaderboard />} />
+  </Routes>
+</Router>
   );
 }
 
