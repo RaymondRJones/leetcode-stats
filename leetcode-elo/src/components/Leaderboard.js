@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Typography, List, ListItem, ListItemAvatar, Avatar, Grid, Box, CircularProgress, CardActionArea } from '@mui/material';
+import { Container, Typography, List, ListItem, ListItemAvatar, Avatar, Grid, Box, CircularProgress, TextField, CardActionArea } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const CustomCard = styled(Box)(({ theme }) => ({
@@ -16,6 +16,7 @@ const CustomCard = styled(Box)(({ theme }) => ({
 function Leaderboard() {
   const [leaderboard, setLeaderboard] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     const fetchLeaderboard = async () => {
@@ -41,13 +42,32 @@ function Leaderboard() {
     window.open(`https://leetcode.com/${profileName}`, '_blank');
   };
 
+  // Function to filter leaderboard based on search term
+  const filteredLeaderboard = searchTerm
+    ? leaderboard.filter((user) =>
+        user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        `${user.rank}`.startsWith(searchTerm) // Assuming rank is a property you have or can compute
+      )
+    : leaderboard;
+
   return (
     <Container maxWidth="md" sx={{ mt: 4, mb: 4 }}>
       <Typography variant="h4" gutterBottom component="div" sx={{ fontFamily: "'Roboto', sans-serif", fontWeight: 500 }}>
-        Community Leaderboard 2024
+        2024 Twitch Leetcode Leaderboard
       </Typography>
+      <Typography variant="h6" gutterBottom component="div" sx={{ fontFamily: "'Roboto', sans-serif", fontWeight: 500 }}>
+        (Updated March 24th, 2024)
+      </Typography>
+      <TextField
+        fullWidth
+        label="Search by name"
+        variant="outlined"
+        sx={{ mb: 2 }}
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
       <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-        {leaderboard.map((user, index) => (
+        {filteredLeaderboard.map((user, index) => (
           <CustomCard key={index}>
             <CardActionArea onClick={() => handleCardClick(user.name)}>
               <ListItem alignItems="flex-start">
