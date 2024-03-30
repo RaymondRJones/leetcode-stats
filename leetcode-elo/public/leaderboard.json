@@ -1,7 +1,7 @@
 [
     {
-      "name": "midnight_simon",
-      "elo": 2040
+      "name": "midnightsimon",
+      "elo": 2026
     },
     {
       "name": "therealraymondjones",
@@ -47,6 +47,15 @@
         "name": "larryny",
         "elo": 3011
     },
+    {
+        "name": "glump1",
+        "elo": 2636
+    },
+    {
+        "name": "killer-whale",
+        "elo": 2161
+    },
+    
     {
         "name": "stevencodestuff",
         "elo": 1918
