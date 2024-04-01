@@ -34,6 +34,8 @@ You should see the homepage which loads the leaderboard.
 
 This displays the leaderboard and imports data from a json that contains all user profiles and elo, hardcoded values.
 
+The JSON file is located in `public/leaderboard.json`
+
 ## Ideas for Improvement
 
 There are two core ideas
