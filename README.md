@@ -11,6 +11,14 @@ Node version is `v20.5.1`
 
 ### To run:
 
+git clone the repo
+
+cd into `leetcode-elo` like
+
+```
+cd leetcode-elo
+```
+
 Make sure you ran `npm install` beforehand
 
 ```
