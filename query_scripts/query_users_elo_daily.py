@@ -25,6 +25,40 @@ headers = {
     'Upgrade-Insecure-Requests': '1',
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:123.0) Gecko/20100101 Firefox/123.0'
 }
+def get_problems_solved(username):
+    url = "https://leetcode.com/graphql"
+    payload = {
+        "operationName": "userProblemsSolved",
+        "query": """
+        query userProblemsSolved($username: String!) {
+            allQuestionsCount {
+                difficulty
+                count
+            }
+            matchedUser(username: $username) {
+                problemsSolvedBeatsStats {
+                    difficulty
+                    percentage
+                }
+                submitStatsGlobal {
+                    acSubmissionNum {
+                        difficulty
+                        count
+                    }
+                }
+            }
+        }
+        """,
+        "variables": {"username": username}
+    }
+    response = requests.post(url, headers=headers, cookies=cookies, json=payload)
+    if response.status_code == 200:
+        data = response.json()
+        total_problems_solved = data['data']['matchedUser']['submitStatsGlobal']['acSubmissionNum'][0]['count']
+        return total_problems_solved
+    else:
+        print(f'Failed to retrieve problem stats for {username}: {response.status_code}')
+        return None
 
 def get_elo_of_leetcoder(username):
     url = "https://leetcode.com/graphql"
@@ -66,6 +100,9 @@ def main():
         if elo is not None:
             user_elos.append((username, elo))
         print("Adding value of elo", elo, "to", username)
+        print("Get Problem count of username...", username)
+        problems_solved_count = get_problems_solved(username)
+        print("Problems solved by user...", problems_solved_count)
     write_elos_to_file('user_elos.txt', user_elos)
 
 if __name__ == "__main__":
