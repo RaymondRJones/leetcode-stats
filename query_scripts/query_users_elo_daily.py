@@ -94,7 +94,7 @@ def write_elos_to_json(filename, user_elos):
         json.dump(data, file, indent=4)
 
 def main():
-    usernames = read_usernames_from_file('usernames.txt')
+    usernames = read_usernames_from_file('usernames_fixed.txt')
     user_elos = []
     for username in usernames:
         print("Getting elo of...", username)

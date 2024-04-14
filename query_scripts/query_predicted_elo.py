@@ -1,5 +1,6 @@
 import requests
 import json
+import sys
 
 headers = {
     'Accept': 'application/json',
@@ -15,6 +16,7 @@ def get_new_rating_of_user(username, contest_name):
         data = response.json()
         if data and isinstance(data, list) and len(data) > 0:
             return data[0].get('new_rating')
+    print('Failed to retrieve data for {}: {}'.format(username, response.status_code))
     print("No Data... They probably didn't take the contest...")
     return None
 
@@ -33,20 +35,23 @@ def write_elos_to_json(filename, updated_elos):
     with open(filename, 'w') as file:
         json.dump(updated_elos, file, indent=4)
 
-def main():
+def main(contest_name):
     existing_elos = load_existing_elos('../leetcode-elo/public/users_by_elo.json')
     usernames = [user['name'] for user in existing_elos]
     user_ratings = []
     for username in usernames:
         print("Getting delta rating of...", username)
-        new_rating = get_new_rating_of_user(username, "weekly-contest-393")
+        new_rating = get_new_rating_of_user(username, contest_name)
         if new_rating is not None:
             new_rating = int(new_rating)
             user_ratings.append((username, new_rating))
-            print("Success! Adding delta rating", new_rating, "to", username)
+            print("Success! Adding new rating", new_rating, "to", username)
     updated_elos = update_elos_with_new_ratings(existing_elos, user_ratings)
     write_elos_to_json('../leetcode-elo/public/users_by_elo.json', updated_elos)
 
 if __name__ == "__main__":
-    main()
-
+    if len(sys.argv) < 2:
+        print("Usage: python script.py <contest_name>")
+    else:
+        contest_name = sys.argv[1]
+        main(contest_name)
