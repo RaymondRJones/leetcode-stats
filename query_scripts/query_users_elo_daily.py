@@ -76,7 +76,6 @@ def get_elo_of_leetcoder(username):
     response = requests.post(url, headers=headers, cookies=cookies, json=payload)
     if response.status_code == 200:
         data = response.json()
-        print("Returning proper data")
         return data['data']['userContestRanking']['rating']
     else:
         print('Failed to retrieve data for {}: {}'.format(username, response.status_code))
@@ -102,7 +101,7 @@ def main():
         elo = int(get_elo_of_leetcoder(username))
         if elo is not None:
             user_elos.append((username, elo))
-        print("Adding value of elo", elo, "to", username)
+            print("Success! Adding value of elo", elo, "to", username)
         problems_solved_count = get_problems_solved(username)
         print("Problems solved by user...", problems_solved_count)
     write_elos_to_json('../leetcode-elo/public/users_by_elo.json', user_elos)
