@@ -56,7 +56,7 @@ function Leaderboard() {
         2024 Twitch Leetcode Leaderboard
       </Typography>
       <Typography variant="h6" gutterBottom component="div" sx={{ fontFamily: "'Roboto', sans-serif", fontWeight: 500 }}>
-        (Updated March 24th, 2024)
+        (Auto updates every Thursday morning)
       </Typography>
       <TextField
         fullWidth
