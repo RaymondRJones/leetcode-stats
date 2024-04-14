@@ -20,7 +20,7 @@ function Leaderboard() {
 
   useEffect(() => {
     const fetchLeaderboard = async () => {
-      const response = await fetch('/leaderboard.json');
+      const response = await fetch('/users_by_elo.json');
       const data = await response.json();
       data.sort((a, b) => b.elo - a.elo);
       setLeaderboard(data);

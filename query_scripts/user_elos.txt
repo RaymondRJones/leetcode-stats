@@ -1,2 +1,10 @@
-TheRealRaymondJones: 1690
-midnightsimon: 2074
+[
+    {
+        "name": "TheRealRaymondJones",
+        "elo": 1690
+    },
+    {
+        "name": "midnightsimon",
+        "elo": 2074
+    }
+]

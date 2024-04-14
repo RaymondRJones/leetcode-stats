@@ -1,5 +1,5 @@
 import requests
-
+import json
 # Define the headers and cookies as given in your template
 cookies = {
     "__cf_bm": "KfeyV.YLeo6t2K1juP8yTRXTpS61xi17rRtY_Vb4Z.s-1713038425-1.0.1.1-aJPXvRWJ08BDACfr94Z9RIsO5IdL5X22fVIfyOMc2xVQ0.rDzCDu556AjP56lJMWS1HUQRA_eOh0wnqB_kB4SA",
@@ -86,10 +86,13 @@ def read_usernames_from_file(filename):
     with open(filename, 'r') as file:
         return [line.strip() for line in file.readlines()]
 
-def write_elos_to_file(filename, user_elos):
+def write_elos_to_json(filename, user_elos):
+    data = []
+    for user, elo in user_elos:
+        data.append({"name": user, "elo": elo})
+    
     with open(filename, 'w') as file:
-        for user, elo in user_elos:
-            file.write(f'{user}: {elo}\n')
+        json.dump(data, file, indent=4)
 
 def main():
     usernames = read_usernames_from_file('usernames.txt')
@@ -100,10 +103,9 @@ def main():
         if elo is not None:
             user_elos.append((username, elo))
         print("Adding value of elo", elo, "to", username)
-        print("Get Problem count of username...", username)
         problems_solved_count = get_problems_solved(username)
         print("Problems solved by user...", problems_solved_count)
-    write_elos_to_file('user_elos.txt', user_elos)
+    write_elos_to_json('../leetcode-elo/public/users_by_elo.json', user_elos)
 
 if __name__ == "__main__":
     main()
