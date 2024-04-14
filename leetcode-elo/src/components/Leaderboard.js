@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Typography, List, ListItem, ListItemAvatar, Avatar, Grid, Box, CircularProgress, TextField, CardActionArea } from '@mui/material';
+import { Container, Typography, List, ListItem, Grid, Box, CircularProgress, TextField, CardActionArea } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const CustomCard = styled(Box)(({ theme }) => ({

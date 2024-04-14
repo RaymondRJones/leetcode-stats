@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Typography, Container, TextField, Button, Box, Card, CardContent, InputAdornment, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import DonateButton from './components/DonateButton';
 import Leaderboard from './components/Leaderboard';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
