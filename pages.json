@@ -1,6 +1,6 @@
 {
   "build": {
-    "command": "cd leetcode-elo && npm run build",
+    "command": "cd leetcode-elo && npm install && npm run build",
     "publish_dir": "leetcode-elo/build"
   }
 }
