@@ -149,9 +149,6 @@ function App() {
                 </a>
               </Typography>
               <Typography color="textSecondary">
-                Rating: {Math.round(randomProblem.Rating)}
-              </Typography>
-              <Typography color="textSecondary">
                 Contest:{' '}
                 <a
                   href={`https://leetcode.com/contest/${randomProblem["Contest Slug"]}`}

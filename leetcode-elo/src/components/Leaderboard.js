@@ -53,10 +53,13 @@ function Leaderboard() {
   return (
     <Container maxWidth="md" sx={{ mt: 4, mb: 4 }}>
       <Typography variant="h4" gutterBottom component="div" sx={{ fontFamily: "'Roboto', sans-serif", fontWeight: 500 }}>
-        2024 Twitch Leetcode Leaderboard
+        Pat's Whiteboard
       </Typography>
       <Typography variant="h6" gutterBottom component="div" sx={{ fontFamily: "'Roboto', sans-serif", fontWeight: 500 }}>
         (Auto updates every Thursday morning)
+      </Typography>
+      <Typography variant="h6" gutterBottom component="div" sx={{ fontFamily: "'Roboto', sans-serif", fontWeight: 500 }}>
+        Pat's next goal - Study System Design and LLD
       </Typography>
       <TextField
         fullWidth

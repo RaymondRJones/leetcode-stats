@@ -1,11 +1,11 @@
 [
     {
         "name": "midnightsimon",
-        "elo": 2066
+        "elo": 2067
     },
     {
         "name": "TheRealRaymondJones",
-        "elo": 1714
+        "elo": 1715
     },
     {
         "name": "inrosis94",
@@ -13,31 +13,31 @@
     },
     {
         "name": "patshelloworld",
-        "elo": 1522
+        "elo": 1527
     },
     {
         "name": "betsymp",
         "elo": 2804
     },
     {
-        "name": "CasualVimEnjoyer",
+        "name": "casualvimenjoyer",
         "elo": 1439
     },
     {
         "name": "twitch_tv_qiqi_impact",
-        "elo": 2902
+        "elo": 2904
     },
     {
         "name": "Fishron",
-        "elo": 1696
+        "elo": 1697
     },
     {
         "name": "areke",
         "elo": 2903
     },
     {
-        "name": "LarryNY",
-        "elo": 3004
+        "name": "larryny",
+        "elo": 3006
     },
     {
         "name": "glump1",
@@ -45,14 +45,22 @@
     },
     {
         "name": "killer-whale",
-        "elo": 2208
+        "elo": 2211
     },
     {
         "name": "stevencodestuff",
         "elo": 1917
     },
     {
-        "name": "SleepyJie",
-        "elo": 2674
+        "name": "sleepyjie",
+        "elo": 2677
+    },
+    {
+        "name": "MKLOL",
+        "elo": 2889
+    },
+    {
+        "name": "racsosabe",
+        "elo": 3034
     }
 ]
