@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Typography, List, ListItem, Grid, Box, CircularProgress, TextField, CardActionArea } from '@mui/material';
+import { Container, Typography, List, ListItem, Grid, Box, CircularProgress, TextField, CardActionArea, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const CustomCard = styled(Box)(({ theme }) => ({
@@ -13,6 +13,15 @@ const CustomCard = styled(Box)(({ theme }) => ({
   },
 }));
 
+const ImageContainer = styled(Paper)(({ theme }) => ({
+  height: 200, // adjust this based on your actual needs
+  width: '100%',
+  backgroundImage: 'url(pat_thumbs_up.png)',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  marginBottom: theme.spacing(2),
+}));
+
 function Leaderboard() {
   const [leaderboard, setLeaderboard] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -20,10 +29,14 @@ function Leaderboard() {
 
   useEffect(() => {
     const fetchLeaderboard = async () => {
-      const response = await fetch('/users_by_elo.json');
-      const data = await response.json();
-      data.sort((a, b) => b.elo - a.elo);
-      setLeaderboard(data);
+      try {
+        const response = await fetch('/users_by_elo.json');
+        const data = await response.json();
+        data.sort((a, b) => b.elo - a.elo);
+        setLeaderboard(data);
+      } catch (error) {
+        console.error("Failed to fetch leaderboard data:", error);
+      }
       setLoading(false);
     };
 
@@ -42,25 +55,27 @@ function Leaderboard() {
     window.open(`https://leetcode.com/${profileName}`, '_blank');
   };
 
-  // Function to filter leaderboard based on search term
   const filteredLeaderboard = searchTerm
     ? leaderboard.filter((user) =>
-        user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        `${user.rank}`.startsWith(searchTerm) // Assuming rank is a property you have or can compute
+        user.name.toLowerCase().includes(searchTerm.toLowerCase())
       )
     : leaderboard;
 
   return (
     <Container maxWidth="md" sx={{ mt: 4, mb: 4 }}>
-      <Typography variant="h4" gutterBottom component="div" sx={{ fontFamily: "'Roboto', sans-serif", fontWeight: 500 }}>
-        Pat's Whiteboard
-      </Typography>
-      <Typography variant="h6" gutterBottom component="div" sx={{ fontFamily: "'Roboto', sans-serif", fontWeight: 500 }}>
-        (Auto updates every Thursday morning)
-      </Typography>
-      <Typography variant="h6" gutterBottom component="div" sx={{ fontFamily: "'Roboto', sans-serif", fontWeight: 500 }}>
-        Pat's next goal - Study System Design and LLD
-      </Typography>
+      <Grid container spacing={2} alignItems="center">
+        <Grid item xs={12} sm={4}>
+          <ImageContainer />
+        </Grid>
+        <Grid item xs={12} sm={8}>
+          <Typography variant="h4" gutterBottom component="div" sx={{ fontFamily: "'Roboto', sans-serif", fontWeight: 500 }}>
+            Pat's Whiteboard
+          </Typography>
+          <Typography variant="h6" gutterBottom component="div" sx={{ fontFamily: "'Roboto', sans-serif", fontWeight: 500 }}>
+            Pat's next goal - Study System Design and LLD
+          </Typography>
+        </Grid>
+      </Grid>
       <TextField
         fullWidth
         label="Search by name"
