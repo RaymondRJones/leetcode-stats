@@ -4,3 +4,4 @@
 .DS_Store
 /aws-lamba-function
 /scripts
+/query_scripts/cookies.py
