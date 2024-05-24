@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Typography, Container, TextField, Button, Box, Card, CardContent, InputAdornment, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import Leaderboard from './components/Leaderboard';
+import LeetcodeCoinCalculator from './components/LeetcodeCoinCalculator';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
@@ -79,6 +80,7 @@ function App() {
         {/* Add navigation links */}
         <Link to="/zerotrac" style={{ color: 'white', textDecoration: 'none', margin: '0 10px' }}>Zerotrac</Link>
         <Link to="/" style={{ color: 'white', textDecoration: 'none', margin: '0 10px' }}>Twitch Leaderboard</Link>
+        <Link to="/calculator" style={{ color: 'white', textDecoration: 'none', margin: '0 10px' }}>Leetcode T-Shirt Calculator</Link>
       </Toolbar>
     </AppBar>
     <Routes>
@@ -207,6 +209,7 @@ function App() {
     </div>
       }/>
     <Route path="/" element={<Leaderboard />} />
+    <Route path="/calculator" element={<LeetcodeCoinCalculator/>} />
   </Routes>
 </Router>
   );
