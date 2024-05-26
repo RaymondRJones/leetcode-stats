@@ -90,32 +90,38 @@ function Leaderboard() {
         {filteredLeaderboard.map((user, index) => (
           <CustomCard key={index}>
             <CardActionArea onClick={() => handleCardClick(user.name)}>
-              <ListItem alignItems="flex-start">
-                <Grid container justifyContent="space-between" alignItems="center">
-                  <Grid item>
-                    <Typography variant="h6" component="span" sx={{ fontFamily: "'Roboto', sans-serif" }}>
-                      #{index + 1} {user.name}
-                    </Typography>
-                  </Grid>
-                  <Grid item>
-                    <Typography variant="subtitle1" component="span" sx={{ fontWeight: 'bold', fontFamily: "'Roboto', sans-serif" }}>
-                      ELO: {user.elo}
-                    </Typography>
-                    {user.prev_elo !== undefined && (
-                      <Grid container alignItems="center">
-                        {user.elo > user.prev_elo ? (
-                          <ArrowUpwardIcon sx={{ color: 'green', ml: 1 }} />
-                        ) : (
-                          <ArrowDownwardIcon sx={{ color: 'red', ml: 1 }} />
-                        )}
-                        <Typography variant="subtitle2" component="span" sx={{ fontFamily: "'Roboto', sans-serif", ml: 0.5 }}>
-                          {user.elo - user.prev_elo} From last week
+              <Grid container justifyContent="space-between" alignItems="center">
+                <Grid item xs={8}>
+                  <ListItem alignItems="flex-start">
+                    <Grid container justifyContent="space-between" alignItems="center">
+                      <Grid item>
+                        <Typography variant="h6" component="span" sx={{ fontFamily: "'Roboto', sans-serif" }}>
+                          #{index + 1} {user.name}
                         </Typography>
                       </Grid>
-                    )}
-                  </Grid>
+                      <Grid item>
+                        <Typography variant="subtitle1" component="span" sx={{ fontWeight: 'bold', fontFamily: "'Roboto', sans-serif" }}>
+                          ELO: {user.elo}
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                  </ListItem>
                 </Grid>
-              </ListItem>
+                <Grid item xs={4}>
+                  {user.prev_elo !== undefined && (
+                    <Box sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', bgcolor: 'rgba(0,0,0,0.1)', p: 0.5, borderRadius: 1, width: 'fit-content', ml: 'auto' }}>
+                      {user.elo > user.prev_elo ? (
+                        <ArrowUpwardIcon sx={{ color: 'green' }} />
+                      ) : (
+                        <ArrowDownwardIcon sx={{ color: 'red' }} />
+                      )}
+                      <Typography variant="subtitle2" component="span" sx={{ fontFamily: "'Roboto', sans-serif", ml: 0.5 }}>
+                        {user.elo - user.prev_elo} since last contest
+                      </Typography>
+                    </Box>
+                  )}
+                </Grid>
+              </Grid>
             </CardActionArea>
           </CustomCard>
         ))}
