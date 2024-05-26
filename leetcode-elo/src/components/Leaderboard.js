@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Typography, List, ListItem, Grid, Box, CircularProgress, TextField, CardActionArea, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 const CustomCard = styled(Box)(({ theme }) => ({
   marginBottom: theme.spacing(2),
@@ -99,6 +101,18 @@ function Leaderboard() {
                     <Typography variant="subtitle1" component="span" sx={{ fontWeight: 'bold', fontFamily: "'Roboto', sans-serif" }}>
                       ELO: {user.elo}
                     </Typography>
+                    {user.prev_elo !== undefined && (
+                      <Grid container alignItems="center">
+                        {user.elo > user.prev_elo ? (
+                          <ArrowUpwardIcon sx={{ color: 'green', ml: 1 }} />
+                        ) : (
+                          <ArrowDownwardIcon sx={{ color: 'red', ml: 1 }} />
+                        )}
+                        <Typography variant="subtitle2" component="span" sx={{ fontFamily: "'Roboto', sans-serif", ml: 0.5 }}>
+                          {user.elo - user.prev_elo} From last week
+                        </Typography>
+                      </Grid>
+                    )}
                   </Grid>
                 </Grid>
               </ListItem>

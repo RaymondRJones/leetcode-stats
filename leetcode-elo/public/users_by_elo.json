@@ -5,15 +5,18 @@
     },
     {
         "name": "TheRealRaymondJones",
-        "elo": 1751
+        "elo": 1740,
+        "prev_elo": 1751
     },
     {
         "name": "inrosis94",
-        "elo": 1861
+        "elo": 1818,
+        "prev_elo": 1861
     },
     {
         "name": "patshelloworld",
-        "elo": 1548
+        "elo": 1565,
+        "prev_elo": 1548
     },
     {
         "name": "betsymp",
@@ -57,7 +60,8 @@
     },
     {
         "name": "MKLOL",
-        "elo": 2889
+        "elo": 2923,
+        "prev_elo": 2889
     },
     {
         "name": "racsosabe",

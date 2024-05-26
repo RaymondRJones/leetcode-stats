@@ -28,6 +28,7 @@ def update_elos_with_new_ratings(existing_elos, user_ratings):
     elo_dict = {user['name']: user for user in existing_elos}
     for username, new_rating in user_ratings:
         if username in elo_dict:
+            elo_dict[username]['prev_elo'] = elo_dict[username]['elo']
             elo_dict[username]['elo'] = new_rating
     return list(elo_dict.values())
 
