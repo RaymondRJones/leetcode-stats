@@ -113,7 +113,7 @@ def main():
             print("Success! Adding value of elo", elo, "to", username, "Old rating was ", user["prev_elo"])
         # problems_solved_count = get_problems_solved(username)
         # print("Problems solved by user...", problems_solved_count)
-    update_json('../leetcode-elo/public/users_by_elo_2.json', existing_users)
+    update_json('../leetcode-elo/public/users_by_elo.json', existing_users)
     print("Finished and saved all the Elo's")
 if __name__ == "__main__":
     main()

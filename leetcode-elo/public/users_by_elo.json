@@ -1,86 +1,102 @@
 [
     {
         "name": "midnightsimon",
-        "elo": 2039
+        "elo": 2039,
+        "prev_elo": 2039
     },
     {
         "name": "TheRealRaymondJones",
-        "elo": 1740,
-        "prev_elo": 1751
+        "elo": 1744,
+        "prev_elo": 1740
     },
     {
         "name": "inrosis94",
-        "elo": 1818,
-        "prev_elo": 1861
+        "elo": 1820,
+        "prev_elo": 1818
     },
     {
         "name": "patshelloworld",
-        "elo": 1565,
-        "prev_elo": 1548
+        "elo": 1571,
+        "prev_elo": 1565
     },
     {
         "name": "betsymp",
-        "elo": 2956
+        "elo": 2956,
+        "prev_elo": 2956
     },
     {
         "name": "casualvimenjoyer",
-        "elo": 1439
+        "elo": 1439,
+        "prev_elo": 1439
     },
     {
         "name": "twitch_tv_qiqi_impact",
-        "elo": 2895
+        "elo": 2895,
+        "prev_elo": 2895
     },
     {
         "name": "Fishron",
-        "elo": 1749
+        "elo": 1750,
+        "prev_elo": 1749
     },
     {
         "name": "areke",
-        "elo": 2859
+        "elo": 2859,
+        "prev_elo": 2859
     },
     {
         "name": "larryny",
-        "elo": 2956
+        "elo": 2880,
+        "prev_elo": 2956
     },
     {
         "name": "glump1",
-        "elo": 2602
+        "elo": 2604,
+        "prev_elo": 2602
     },
     {
         "name": "killer-whale",
-        "elo": 2395
+        "elo": 2396,
+        "prev_elo": 2395
     },
     {
         "name": "stevencodestuff",
-        "elo": 1917
+        "elo": 1917,
+        "prev_elo": 1917
     },
     {
         "name": "sleepyjie",
-        "elo": 2789
+        "elo": 2808,
+        "prev_elo": 2789
     },
     {
         "name": "MKLOL",
-        "elo": 2923,
-        "prev_elo": 2889
+        "elo": 2930,
+        "prev_elo": 2923
     },
     {
         "name": "racsosabe",
-        "elo": 3034
+        "elo": 3034,
+        "prev_elo": 3034
     },
     {
         "name": "encephalopathy",
-        "elo": 1534
+        "elo": 1534,
+        "prev_elo": 1534
     },
     {
         "name": "spookie886",
-        "elo": 1458
+        "elo": 1458,
+        "prev_elo": 1458
     },
     {
         "name": "ploki122",
-        "elo": 1742
+        "elo": 1743,
+        "prev_elo": 1742
     },
     {
         "name": "Just-Bax",
-        "elo": 1766
+        "elo": 1766,
+        "prev_elo": 1766
     }
 ]
