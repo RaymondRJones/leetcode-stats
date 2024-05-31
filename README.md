@@ -42,7 +42,11 @@ The favicon in public still has the react symbol on it.
 
 Anything else you want to add?
 
+##### People can't add themselves into the list
 
+solutions -> Google Form for signing people up / removing people
 
+Twitch authentication -> Give a key/ID to each user and allow them to add and remove the user that matches their ID
 
-
+##### Prediction rating should be overwritten after Wednesday for official rating
+Add a new key to the JSON for is_predicted_elo

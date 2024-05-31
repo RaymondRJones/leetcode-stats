@@ -1,5 +1,25 @@
 [
     {
+        "name": "snowxcodes",
+        "elo": 1521,
+        "prev_elo": 1521
+    },
+    {
+        "name": "singhnav314",
+        "elo": 1728,
+        "prev_elo": 1728
+    },
+    {
+        "name": "Beorn",
+        "elo": 1841,
+        "prev_elo": 1841
+    },
+    {
+        "name": "Q_Ultimas",
+        "elo": 1703,
+        "prev_elo": 1703
+    },
+    {
         "name": "midnightsimon",
         "elo": 2039,
         "prev_elo": 2039
@@ -7,17 +27,17 @@
     {
         "name": "TheRealRaymondJones",
         "elo": 1744,
-        "prev_elo": 1740
+        "prev_elo": 1744
     },
     {
         "name": "inrosis94",
         "elo": 1820,
-        "prev_elo": 1818
+        "prev_elo": 1820
     },
     {
         "name": "patshelloworld",
         "elo": 1571,
-        "prev_elo": 1565
+        "prev_elo": 1571
     },
     {
         "name": "betsymp",
@@ -37,7 +57,7 @@
     {
         "name": "Fishron",
         "elo": 1750,
-        "prev_elo": 1749
+        "prev_elo": 1750
     },
     {
         "name": "areke",
@@ -47,17 +67,17 @@
     {
         "name": "larryny",
         "elo": 2880,
-        "prev_elo": 2956
+        "prev_elo": 2880
     },
     {
         "name": "glump1",
         "elo": 2604,
-        "prev_elo": 2602
+        "prev_elo": 2604
     },
     {
         "name": "killer-whale",
         "elo": 2396,
-        "prev_elo": 2395
+        "prev_elo": 2396
     },
     {
         "name": "stevencodestuff",
@@ -67,12 +87,12 @@
     {
         "name": "sleepyjie",
         "elo": 2808,
-        "prev_elo": 2789
+        "prev_elo": 2808
     },
     {
         "name": "MKLOL",
         "elo": 2930,
-        "prev_elo": 2923
+        "prev_elo": 2930
     },
     {
         "name": "racsosabe",
@@ -92,7 +112,7 @@
     {
         "name": "ploki122",
         "elo": 1743,
-        "prev_elo": 1742
+        "prev_elo": 1743
     },
     {
         "name": "Just-Bax",

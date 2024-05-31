@@ -107,10 +107,15 @@ def main():
         print("Getting elo of...", user["name"])
         elo = int(get_elo_of_leetcoder(user["name"]))
         if elo is not None:
-            user["prev_elo"] = user["elo"]
-            user["elo"] = elo
+            if user.get("is_new_user",False):
+                user["prev_elo"] = user["elo"]
+                user["elo"] = elo
+            else:
+                user["elo"] = elo
+                user["prev_elo"] = elo
+                user["is_new_user"] = False
             user_elos.append((username, elo))
-            print("Success! Adding value of elo", elo, "to", username, "Old rating was ", user["prev_elo"])
+            print("Success! Adding value of elo", elo, "to", username)
         # problems_solved_count = get_problems_solved(username)
         # print("Problems solved by user...", problems_solved_count)
     update_json('../leetcode-elo/public/users_by_elo.json', existing_users)
