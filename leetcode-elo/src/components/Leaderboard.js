@@ -3,7 +3,7 @@ import { Container, Typography, List, ListItem, Grid, Box, CircularProgress, Tex
 import { styled } from '@mui/material/styles';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-
+import RemoveIcon from '@mui/icons-material/Remove';
 const CustomCard = styled(Box)(({ theme }) => ({
   marginBottom: theme.spacing(2),
   borderRadius: theme.shape.borderRadius,
@@ -107,20 +107,22 @@ function Leaderboard() {
                     </Grid>
                   </ListItem>
                 </Grid>
-                <Grid item xs={4}>
-                  {user.prev_elo !== undefined && (
-                    <Box sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', bgcolor: 'rgba(0,0,0,0.1)', p: 0.5, borderRadius: 1, width: 'fit-content', ml: 'auto' }}>
-                      {user.elo > user.prev_elo ? (
-                        <ArrowUpwardIcon sx={{ color: 'green' }} />
-                      ) : (
-                        <ArrowDownwardIcon sx={{ color: 'red' }} />
-                      )}
-                      <Typography variant="subtitle2" component="span" sx={{ fontFamily: "'Roboto', sans-serif", ml: 0.5 }}>
-                        {user.elo - user.prev_elo} since last contest
-                      </Typography>
-                    </Box>
-                  )}
-                </Grid>
+                  <Grid item xs={4}>
+                    {user.prev_elo !== undefined && (
+                      <Box sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', bgcolor: 'rgba(0,0,0,0.1)', p: 0.5, borderRadius: 1, width: 'fit-content', ml: 'auto' }}>
+                        {user.elo > user.prev_elo ? (
+                          <ArrowUpwardIcon sx={{ color: 'green' }} />
+                        ) : user.elo < user.prev_elo ? (
+                          <ArrowDownwardIcon sx={{ color: 'red' }} />
+                        ) : (
+                          <RemoveIcon sx={{ color: 'grey' }} />
+                        )}
+                        <Typography variant="subtitle2" component="span" sx={{ fontFamily: "'Roboto', sans-serif", ml: 0.5 }}>
+                          {user.elo - user.prev_elo} since last contest
+                        </Typography>
+                      </Box>
+                    )}
+                  </Grid>
               </Grid>
             </CardActionArea>
           </CustomCard>
