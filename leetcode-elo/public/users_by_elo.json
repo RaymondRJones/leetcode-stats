@@ -1,7 +1,7 @@
 [
     {
         "name": "snowxcodes",
-        "elo": 1521,
+        "elo": 1550,
         "prev_elo": 1521
     },
     {
@@ -11,12 +11,12 @@
     },
     {
         "name": "Beorn",
-        "elo": 1841,
+        "elo": 1862,
         "prev_elo": 1841
     },
     {
         "name": "Q_Ultimas",
-        "elo": 1703,
+        "elo": 1732,
         "prev_elo": 1703
     },
     {
@@ -31,12 +31,12 @@
     },
     {
         "name": "inrosis94",
-        "elo": 1820,
+        "elo": 1907,
         "prev_elo": 1820
     },
     {
         "name": "patshelloworld",
-        "elo": 1571,
+        "elo": 1598,
         "prev_elo": 1571
     },
     {
@@ -51,7 +51,7 @@
     },
     {
         "name": "twitch_tv_qiqi_impact",
-        "elo": 2895,
+        "elo": 2849,
         "prev_elo": 2895
     },
     {
@@ -61,7 +61,7 @@
     },
     {
         "name": "areke",
-        "elo": 2859,
+        "elo": 2839,
         "prev_elo": 2859
     },
     {
@@ -91,7 +91,7 @@
     },
     {
         "name": "MKLOL",
-        "elo": 2930,
+        "elo": 2936,
         "prev_elo": 2930
     },
     {
@@ -116,7 +116,7 @@
     },
     {
         "name": "Just-Bax",
-        "elo": 1766,
+        "elo": 1769,
         "prev_elo": 1766
     }
 ]
