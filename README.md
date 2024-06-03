@@ -38,10 +38,6 @@ The JSON file is located in `public/leaderboard.json`
 
 ## Ideas for Improvement
 
-The favicon in public still has the react symbol on it.
-
-Anything else you want to add?
-
 ##### People can't add themselves into the list
 
 solutions -> Google Form for signing people up / removing people
