@@ -1,7 +1,7 @@
 [
     {
         "name": "snowxcodes",
-        "elo": 1590,
+        "elo": 1552,
         "prev_elo": 1590
     },
     {
@@ -11,8 +11,8 @@
     },
     {
         "name": "Beorn",
-        "elo": 1865,
-        "prev_elo": 1877
+        "elo": 1851,
+        "prev_elo": 1865
     },
     {
         "name": "Q_Ultimas",
@@ -26,8 +26,8 @@
     },
     {
         "name": "TheRealRaymondJones",
-        "elo": 1771,
-        "prev_elo": 1757
+        "elo": 1789,
+        "prev_elo": 1771
     },
     {
         "name": "inrosis94",
@@ -51,12 +51,12 @@
     },
     {
         "name": "twitch_tv_qiqi_impact",
-        "elo": 2818,
-        "prev_elo": 2761
+        "elo": 2768,
+        "prev_elo": 2818
     },
     {
         "name": "Fishron",
-        "elo": 1750,
+        "elo": 1754,
         "prev_elo": 1750
     },
     {
@@ -76,7 +76,7 @@
     },
     {
         "name": "killer-whale",
-        "elo": 2341,
+        "elo": 2319,
         "prev_elo": 2341
     },
     {
